@@ -1,17 +1,17 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import styled from 'styled-components';
-import bannerImageMobile from '../images/image-intro-mobile.jpg';
-import bannerImageDesktop from '../images/image-intro-desktop.jpg';
+import React from "react";
+import { useSelector } from "react-redux";
+import styled from "styled-components";
+import bannerImageMobile from "../images/image-intro-mobile.jpg";
+import bannerImageDesktop from "../images/image-intro-desktop.jpg";
 
-const maxWidth = '999px';
-const minWidth = '1000px';
+const maxWidth = "999px";
+const minWidth = "1000px";
 
 const Container = styled.div`
   position: relative;
   z-index: 0;
   @media screen and (max-width: ${maxWidth}) {
-    display: ${(prop) => (!prop.menuProp ? 'initial' : 'none')};
+    display: ${(prop) => (!prop.menuProp ? "initial" : "none")};
   }
 `;
 
@@ -76,7 +76,7 @@ const TextBox = styled.div`
 
 const BannerTitle = styled.p`
   text-align: center;
-  font-family: 'DM Serif Display', serif;
+  font-family: "DM Serif Display", serif;
   font-size: 44px;
   font-weight: 400;
   line-height: 1;
@@ -232,7 +232,7 @@ const MidLine = styled.div`
 `;
 
 const MidHeader = styled.p`
-  font-family: 'DM Serif Display', serif;
+  font-family: "DM Serif Display", serif;
   color: hsl(270, 9%, 17%);
   margin-bottom: 65px;
   font-weight: 400;
@@ -291,7 +291,7 @@ const CardImage = styled.div`
 
 const CardHeader = styled.h3`
   font-size: 24px;
-  font-family: 'DM Serif Display', serif;
+  font-family: "DM Serif Display", serif;
   color: hsl(270, 9%, 17%);
   margin-bottom: 10px;
   @media screen and (max-width: ${maxWidth}) {
@@ -323,12 +323,18 @@ const BottomContainer = styled.div`
 
 const BottomBanner = styled.div`
   background-color: hsl(256, 26%, 20%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   @media screen and (max-width: ${maxWidth}) {
     padding: 60px 30px;
     font-size: 22px;
     font-weight: 400;
+    min-height: 350px;
   }
   @media screen and (min-width: ${minWidth}) {
+    padding: 0 80px;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -338,12 +344,13 @@ const BottomContainerInner = styled.div``;
 
 const BottomText = styled.p`
   color: white;
-  font-family: 'DM Serif Display', serif;
+  font-family: "DM Serif Display", serif;
+  line-height: 1;
   @media screen and (max-width: ${maxWidth}) {
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 400;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
   @media screen and (min-width: ${minWidth}) {
   }
@@ -373,11 +380,29 @@ const BottomButton = styled.button`
   }
 `;
 
-const BottomImage = styled.div``;
+const BottomImage = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+`;
 
-const BottomImageMobile = styled.div``;
+const BottomImageMobile = styled.div`
+  @media screen and (max-width: ${maxWidth}) {
+    display: block;
+  }
+  @media screen and (min-width: ${minWidth}) {
+    display: none;
+  }
+`;
 
-const BottomImageDesktop = styled.div``;
+const BottomImageDesktop = styled.div`
+  @media screen and (max-width: ${maxWidth}) {
+    display: none;
+  }
+  @media screen and (min-width: ${minWidth}) {
+    display: block;
+  }
+`;
 
 const Body = () => {
   const navOpen = useSelector((state) => state.nav.navOpen);
