@@ -168,8 +168,8 @@ const ViewPlans = styled(Link)`
 const NavMenuLogo = styled.div`
   @media screen and (max-width: ${maxWidth}) {
     margin-top: 45px;
-    flex-grow: 1;
     overflow: hidden;
+    height: 100%;
   }
   @media screen and (min-width: ${minWidth}) {
     display: none;
