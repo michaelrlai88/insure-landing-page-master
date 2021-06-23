@@ -13,17 +13,25 @@ const abc = styled.div`
 `;
 
 const OuterContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
   background-color: hsl(0, 0%, 98%);
   @media screen and (max-width: ${maxWidth}) {
     display: ${(prop) => (!prop.menuProp ? 'block' : 'none')};
     padding: 0 20px 50px 20px;
   }
   @media screen and (min-width: ${minWidth}) {
-    padding: 0 150px;
+    padding: 60px 150px 40px 150px;
   }
 `;
 
 const FooterWatermark = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
   @media screen and (max-width: ${maxWidth}) {
   }
   @media screen and (min-width: ${minWidth}) {
@@ -31,8 +39,6 @@ const FooterWatermark = styled.div`
 `;
 
 const FooterWatermarkMobile = styled.div`
-  position: absolute;
-  left: 0;
   @media screen and (max-width: 375px) {
     display: block;
   }
@@ -42,8 +48,6 @@ const FooterWatermarkMobile = styled.div`
 `;
 
 const FooterWatermarkDesktop = styled.div`
-  position: absolute;
-  left: 0;
   @media screen and (max-width: 375px) {
     display: none;
   }
@@ -68,6 +72,9 @@ const Logos = styled.div`
     margin-bottom: 30px;
   }
   @media screen and (min-width: ${minWidth}) {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
   }
 `;
 
@@ -95,6 +102,7 @@ const HorizontalLine = styled.div`
     margin-bottom: 25px;
   }
   @media screen and (min-width: ${minWidth}) {
+    margin-bottom: 30px;
   }
 `;
 
@@ -102,6 +110,8 @@ const Nav = styled.div`
   @media screen and (max-width: ${maxWidth}) {
   }
   @media screen and (min-width: ${minWidth}) {
+    display: flex;
+    justify-content: space-between;
   }
 `;
 
@@ -110,6 +120,7 @@ const Section = styled.div`
     margin-bottom: 30px;
   }
   @media screen and (min-width: ${minWidth}) {
+    width: 300px;
   }
 `;
 
@@ -120,26 +131,33 @@ const SectionTitle = styled.div`
     margin-bottom: 20px;
   }
   @media screen and (min-width: ${minWidth}) {
+    margin-bottom: 25px;
   }
 `;
 
-const List = styled.div`
+const List = styled.ul`
+  list-style-type: none;
   @media screen and (max-width: ${maxWidth}) {
   }
   @media screen and (min-width: ${minWidth}) {
   }
 `;
 
-const ListItem = styled.a`
+const ListItem = styled.li`
   color: hsl(256, 26%, 20%);
   text-transform: uppercase;
   margin-bottom: 8px;
-  text-decoration: none;
-  display: block;
+
+  padding: 0;
   @media screen and (max-width: ${maxWidth}) {
   }
   @media screen and (min-width: ${minWidth}) {
   }
+`;
+
+const Link = styled.a`
+  text-decoration: none;
+  color: hsl(256, 26%, 20%);
 `;
 
 const Footer = () => {
@@ -147,6 +165,32 @@ const Footer = () => {
 
   return (
     <OuterContainer menuProp={navOpen}>
+      <FooterWatermark>
+        <FooterWatermarkMobile>
+          <svg xmlns='http://www.w3.org/2000/svg' width='374' height='173'>
+            <g fill='none' fill-rule='evenodd' stroke='#E4E4E4'>
+              <path d='M72.361 139.675c75.703 23.693 153.543 63.212 233.235-8.97C385.29 58.523 435.39-4.709 403.036-86.522c-32.354-81.814-164.422-30.855-202.794-103.977-38.373-73.122 45.94-139.485 9.591-204.563-36.35-65.078-64.3-106.787-181.115-65.409C-88.098-419.092-77.327-313.807-166.16-252.153-254.993-190.499-351.104-98.2-219.206 66.494S-3.341 115.98 72.36 139.674z' />
+              <path d='M62.895 101.751c61.583 19.24 124.905 51.33 189.734-7.283 64.828-58.614 105.585-109.959 79.266-176.393-26.32-66.434-133.755-25.055-164.971-84.43-31.216-59.377 37.372-113.266 7.802-166.11-29.57-52.845-52.306-86.713-147.334-53.113-95.028 33.6-86.267 119.094-158.53 169.158-72.265 50.064-150.45 125.012-43.153 258.747S1.312 82.511 62.895 101.751z' />
+              <path d='M45.188 76.583C95.15 92.28 146.522 118.465 199.117 70.64c52.594-47.825 85.66-89.72 64.307-143.926-21.353-54.206-108.513-20.443-133.838-68.89-25.325-48.448 30.32-92.418 6.33-135.536-23.99-43.117-42.436-70.752-119.531-43.336-77.095 27.415-69.987 97.173-128.614 138.022-58.627 40.85-122.058 102.003-35.009 211.122C-60.189 137.216-4.773 60.884 45.188 76.583z' />
+              <path d='M26.684 45.816c40.295 12.596 81.728 33.603 124.147-4.768 42.419-38.371 69.087-71.984 51.865-115.475-17.221-43.491-87.518-16.402-107.943-55.273-20.425-38.87 24.453-74.148 5.105-108.743s-34.225-56.767-96.404-34.77c-62.179 21.996-56.446 77.965-103.73 110.739-47.284 32.774-98.442 81.839-28.236 169.388C-58.305 94.464-13.61 33.221 26.684 45.816z' />
+              <path d='M21.917 25.954c32.91 10.295 66.749 27.467 101.393-3.897 34.643-31.365 56.424-58.84 42.358-94.389-14.065-35.549-71.477-13.407-88.158-45.179-16.682-31.772 19.971-60.609 4.17-88.886-15.803-28.277-27.953-46.4-78.735-28.42-50.782 17.979-46.1 63.727-84.718 90.516-38.617 26.79-80.398 66.895-23.06 138.457 57.339 71.562 93.841 21.503 126.75 31.798z' />
+              <path d='M12.775 11.594c26.718 8.36 54.191 22.305 82.318-3.165 28.127-25.47 45.81-47.78 34.39-76.649-11.419-28.868-58.03-10.887-71.574-36.688-13.544-25.8 16.214-49.217 3.385-72.18-12.83-22.963-22.694-37.68-63.923-23.08-41.229 14.6-37.428 51.75-68.78 73.505-31.353 21.755-65.275 54.323-18.723 112.435C-43.579 43.884-13.944 3.234 12.775 11.594z' />
+            </g>
+          </svg>
+        </FooterWatermarkMobile>
+        <FooterWatermarkDesktop>
+          <svg xmlns='http://www.w3.org/2000/svg' width='528' height='231'>
+            <g fill='none' fill-rule='evenodd' stroke='#E4E4E4'>
+              <path d='M186.361 197.675c75.703 23.693 153.543 63.212 233.235-8.97 79.693-72.182 129.794-135.414 97.44-217.227-32.354-81.814-164.422-30.855-202.794-103.977-38.373-73.122 45.94-139.485 9.591-204.563-36.35-65.078-64.3-106.787-181.115-65.409C25.902-361.092 36.673-255.807-52.16-194.153c-88.833 61.654-184.944 153.953-53.046 318.647s215.865 49.487 291.567 73.18z' />
+              <path d='M176.895 159.751c61.583 19.24 124.905 51.33 189.734-7.283 64.828-58.614 105.585-109.959 79.266-176.393-26.32-66.434-133.755-25.055-164.971-84.43-31.216-59.377 37.372-113.266 7.802-166.11-29.57-52.845-52.306-86.713-147.334-53.113-95.028 33.6-86.267 119.094-158.53 169.158-72.265 50.064-150.45 125.012-43.153 258.747s175.603 40.184 237.186 59.424z' />
+              <path d='M159.188 134.583c49.962 15.698 101.334 41.882 153.929-5.943 52.594-47.825 85.66-89.72 64.307-143.926-21.353-54.206-108.513-20.443-133.838-68.89-25.325-48.448 30.32-92.418 6.33-135.536-23.99-43.117-42.436-70.752-119.531-43.336C53.29-235.633 60.398-165.875 1.77-125.026-56.856-84.176-120.287-23.023-33.238 86.096c87.049 109.12 142.465 32.788 192.426 48.487z' />
+              <path d='M140.684 103.816c40.295 12.596 81.728 33.603 124.147-4.768 42.419-38.371 69.087-71.984 51.865-115.475-17.221-43.491-87.518-16.402-107.943-55.273-20.425-38.87 24.453-74.148 5.105-108.743s-34.225-56.767-96.404-34.77c-62.179 21.996-56.446 77.965-103.73 110.739C-33.56-71.7-84.718-22.635-14.512 64.914c70.207 87.55 114.901 26.307 155.196 38.902z' />
+              <path d='M135.917 83.954c32.91 10.295 66.749 27.467 101.393-3.897 34.643-31.365 56.424-58.84 42.358-94.389-14.065-35.549-71.477-13.407-88.158-45.179-16.682-31.772 19.971-60.609 4.17-88.886-15.803-28.277-27.953-46.4-78.735-28.42-50.782 17.979-46.1 63.727-84.718 90.516C-6.39-59.51-48.17-19.406 9.167 52.156c57.339 71.562 93.841 21.503 126.75 31.798z' />
+              <path d='M126.775 69.594c26.718 8.36 54.191 22.305 82.318-3.165 28.127-25.47 45.81-47.78 34.39-76.649-11.419-28.868-58.03-10.887-71.574-36.688-13.544-25.8 16.214-49.217 3.385-72.18-12.83-22.963-22.694-37.68-63.923-23.08-41.229 14.6-37.428 51.75-68.78 73.505C11.238-46.908-22.684-14.34 23.868 43.772c46.553 58.112 76.188 17.462 102.907 25.822z' />
+            </g>
+          </svg>
+        </FooterWatermarkDesktop>
+      </FooterWatermark>
       <Content>
         <Logos>
           <Company>
@@ -189,35 +233,63 @@ const Footer = () => {
           <Section>
             <SectionTitle>Our company</SectionTitle>
             <List>
-              <ListItem href='/'>How we work</ListItem>
-              <ListItem href='/'>Why Insure?</ListItem>
-              <ListItem href='/'>View plans</ListItem>
-              <ListItem href='/'>Reviews</ListItem>
+              <ListItem>
+                <Link href='/'>How we work</Link>
+              </ListItem>
+              <ListItem>
+                <Link href='/'>Why Insure?</Link>
+              </ListItem>
+              <ListItem>
+                <Link href='/'>View plans</Link>
+              </ListItem>
+              <ListItem>
+                <Link href='/'>Reviews</Link>
+              </ListItem>
             </List>
           </Section>
           <Section>
             <SectionTitle>Help me</SectionTitle>
             <List>
-              <ListItem href='/'>FAQ</ListItem>
-              <ListItem href='/'>Terms of use</ListItem>
-              <ListItem href='/'>Privacy policy</ListItem>
-              <ListItem href='/'>Cookies</ListItem>
+              <ListItem>
+                <Link href='/'>FAQ</Link>
+              </ListItem>
+              <ListItem>
+                <Link href='/'>Terms of use</Link>
+              </ListItem>
+              <ListItem>
+                <Link href='/'>Privacy policy</Link>
+              </ListItem>
+              <ListItem>
+                <Link href='/'>Cookies</Link>
+              </ListItem>
             </List>
           </Section>
           <Section>
             <SectionTitle>Contact</SectionTitle>
             <List>
-              <ListItem href='/'>Sales</ListItem>
-              <ListItem href='/'>Support</ListItem>
-              <ListItem href='/'>Live chat</ListItem>
+              <ListItem>
+                <Link href='/'>Sales</Link>
+              </ListItem>
+              <ListItem>
+                <Link href='/'>Support</Link>
+              </ListItem>
+              <ListItem>
+                <Link href='/'>Live chat</Link>
+              </ListItem>
             </List>
           </Section>
           <Section>
             <SectionTitle>Others</SectionTitle>
             <List>
-              <ListItem href='/'>Careers</ListItem>
-              <ListItem href='/'>Press</ListItem>
-              <ListItem href='/'>Licenses</ListItem>
+              <ListItem>
+                <Link href='/'>Careers</Link>
+              </ListItem>
+              <ListItem>
+                <Link href='/'>Press</Link>
+              </ListItem>
+              <ListItem>
+                <Link href='/'>Licenses</Link>
+              </ListItem>
             </List>
           </Section>
         </Nav>

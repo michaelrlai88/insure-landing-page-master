@@ -117,7 +117,7 @@ const NavList = styled.ul`
   }
 `;
 
-const ListItem = styled.div`
+const ListItem = styled.li`
   @media screen and (max-width: ${maxWidth}) {
     border: 1px solid hsl(270, 9%, 17%);
     padding: 11px 0;
