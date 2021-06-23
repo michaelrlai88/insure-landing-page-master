@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { navOpenTrue, navOpenFalse } from '../redux/navSlice';
 import styled from 'styled-components';
-import disableScroll from 'disable-scroll';
 
 const maxWidth = '849px';
 const minWidth = '850px';
@@ -18,7 +17,7 @@ const NavContainer = styled.div`
 const NavContainerInner = styled.div`
   height: 70px;
   @media screen and (max-width: ${maxWidth}) {
-    width: 100vw;
+    width: 100%;
     background-color: white;
     /*     position: fixed;
     z-index: 1; */

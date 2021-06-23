@@ -1,17 +1,17 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import styled from "styled-components";
-import bannerImageMobile from "../images/image-intro-mobile.jpg";
-import bannerImageDesktop from "../images/image-intro-desktop.jpg";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import styled from 'styled-components';
+import bannerImageMobile from '../images/image-intro-mobile.jpg';
+import bannerImageDesktop from '../images/image-intro-desktop.jpg';
 
-const maxWidth = "999px";
-const minWidth = "1000px";
+const maxWidth = '999px';
+const minWidth = '1000px';
 
 const Container = styled.div`
   position: relative;
   z-index: 0;
   @media screen and (max-width: ${maxWidth}) {
-    display: ${(prop) => (!prop.menuProp ? "initial" : "none")};
+    display: ${(prop) => (!prop.menuProp ? 'block' : 'none')};
   }
 `;
 
@@ -39,6 +39,7 @@ const ImageTextContainer = styled.div`
 const BannerImageMobile = styled.img`
   @media screen and (max-width: 375px) {
     display: block;
+    width: 100%;
   }
   @media screen and (min-width: 376px) {
     display: none;
@@ -76,7 +77,7 @@ const TextBox = styled.div`
 
 const BannerTitle = styled.p`
   text-align: center;
-  font-family: "DM Serif Display", serif;
+  font-family: 'DM Serif Display', serif;
   font-size: 44px;
   font-weight: 400;
   line-height: 1;
@@ -198,7 +199,7 @@ const MidContainer = styled.div`
     padding: 120px 20px 70px 20px;
   }
   @media screen and (min-width: ${minWidth}) {
-    padding: 300px 150px 100px 150px;
+    padding: 300px 150px 80px 150px;
   }
 `;
 
@@ -231,9 +232,9 @@ const MidLine = styled.div`
 `;
 
 const MidHeader = styled.p`
-  font-family: "DM Serif Display", serif;
+  font-family: 'DM Serif Display', serif;
   color: hsl(270, 9%, 17%);
-  margin-bottom: 65px;
+  margin-bottom: 50px;
   font-weight: 400;
   @media screen and (max-width: ${maxWidth}) {
     text-align: center;
@@ -290,7 +291,7 @@ const CardImage = styled.div`
 
 const CardHeader = styled.h3`
   font-size: 24px;
-  font-family: "DM Serif Display", serif;
+  font-family: 'DM Serif Display', serif;
   color: hsl(270, 9%, 17%);
   margin-bottom: 10px;
   @media screen and (max-width: ${maxWidth}) {
@@ -331,12 +332,14 @@ const BottomBanner = styled.div`
     font-size: 22px;
     font-weight: 400;
     min-height: 350px;
+    margin-bottom: 110px;
   }
   @media screen and (min-width: ${minWidth}) {
     padding: 0 80px;
     max-width: 1200px;
     margin: 0 auto;
     height: 250px;
+    margin-bottom: 110px;
   }
 `;
 
@@ -351,7 +354,7 @@ const BottomContainerInner = styled.div`
 
 const BottomText = styled.p`
   color: white;
-  font-family: "DM Serif Display", serif;
+  font-family: 'DM Serif Display', serif;
   line-height: 1;
   font-size: 40px;
   font-weight: 400;
@@ -362,6 +365,7 @@ const BottomText = styled.p`
   @media screen and (min-width: ${minWidth}) {
     font-size: 50px;
     max-width: 450px;
+    margin-right: 100px;
   }
 `;
 
