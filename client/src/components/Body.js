@@ -513,7 +513,7 @@ const Body = () => {
           <MidLineContainer>
             <MidLine></MidLine>
           </MidLineContainer>
-          <MidHeader>We're different</MidHeader>
+          <MidHeader>We're different test</MidHeader>
           <CardsContainer>
             <CardProcess>
               <CardImage>
