@@ -60,12 +60,10 @@ const NavLogo = styled.div`
   }
 `;
 
-const HamburgerMenu = styled.button`
+const HamburgerMenu = styled.div`
   padding-top: 3px;
   padding-right: 20px;
   border: none;
-  background: transparent;
-  -webkit-appearance: none;
   &:hover {
     cursor: pointer;
   }
