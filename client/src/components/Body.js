@@ -199,7 +199,7 @@ const MidContainer = styled.div`
     padding: 120px 20px 70px 20px;
   }
   @media screen and (min-width: ${minWidth}) {
-    padding: 300px 150px 80px 150px;
+    padding: 250px 150px 80px 150px;
   }
 `;
 
@@ -218,6 +218,7 @@ const MidLineContainer = styled.div`
     justify-content: center;
   }
   @media screen and (min-width: ${minWidth}) {
+    padding-bottom: 50px;
   }
 `;
 
