@@ -170,8 +170,7 @@ const BannerImagesDesktopOne = styled.div`
   }
   @media screen and (min-width: ${minWidth}) {
     position: absolute;
-    bottom: 470px;
-    width: 50%;
+    top: 450px;
   }
 `;
 
@@ -337,46 +336,65 @@ const BottomBanner = styled.div`
     padding: 0 80px;
     max-width: 1200px;
     margin: 0 auto;
+    height: 250px;
   }
 `;
 
-const BottomContainerInner = styled.div``;
+const BottomContainerInner = styled.div`
+  @media screen and (max-width: ${maxWidth}) {
+  }
+  @media screen and (min-width: ${minWidth}) {
+    display: flex;
+    justify-content: space-between;
+  }
+`;
 
 const BottomText = styled.p`
   color: white;
   font-family: "DM Serif Display", serif;
   line-height: 1;
+  font-size: 40px;
+  font-weight: 400;
   @media screen and (max-width: ${maxWidth}) {
     text-align: center;
-    font-size: 40px;
-    font-weight: 400;
     margin-bottom: 40px;
   }
   @media screen and (min-width: ${minWidth}) {
+    font-size: 50px;
+    max-width: 450px;
   }
 `;
 
 const BottomButtonContainer = styled.div`
-  text-align: center;
+  @media screen and (max-width: ${maxWidth}) {
+    text-align: center;
+  }
+  @media screen and (min-width: ${minWidth}) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 168px;
+  }
 `;
 
 const BottomButton = styled.button`
   font-size: 16px;
   text-transform: uppercase;
   background: none;
-  text-align: center;
   color: white;
-  text-align: center;
-  background-color: hsl(256, 26%, 20%);
+  background-color: none;
   border: 2px solid white;
   padding: 8px 20px;
-
   position: relative;
   z-index: 1;
   &:hover {
     cursor: pointer;
     background-color: white;
     color: hsl(256, 26%, 20%);
+  }
+  @media screen and (max-width: ${maxWidth}) {
+  }
+  @media screen and (min-width: ${minWidth}) {
   }
 `;
 
