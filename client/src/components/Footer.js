@@ -32,6 +32,7 @@ const FooterWatermark = styled.div`
   top: 0;
   width: 100%;
   overflow: hidden;
+  z-index: 0;
   @media screen and (max-width: ${maxWidth}) {
   }
   @media screen and (min-width: ${minWidth}) {
@@ -57,6 +58,8 @@ const FooterWatermarkDesktop = styled.div`
 `;
 
 const Content = styled.div`
+  position: relative;
+  z-index: 1;
   @media screen and (max-width: ${maxWidth}) {
     text-align: center;
     padding-top: 80px;
