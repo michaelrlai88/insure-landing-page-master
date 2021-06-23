@@ -39,6 +39,7 @@ const NavBar = styled.div`
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    width: 100vw;
   }
 
   @media screen and (min-width: ${minWidth}) {
@@ -52,15 +53,19 @@ const NavBar = styled.div`
 
 const NavLogo = styled.div`
   @media screen and (max-width: ${maxWidth}) {
-    margin-left: 20px;
+    margin-left: 25px;
   }
   @media screen and (min-width: ${minWidth}) {
     /* margin-left: 150px; */
   }
 `;
 
-const HamburgerMenu = styled.a`
-  margin-right: 20px;
+const HamburgerMenu = styled.button`
+  padding-top: 3px;
+  padding-right: 20px;
+  border: none;
+  background: transparent;
+  -webkit-appearance: none;
   &:hover {
     cursor: pointer;
   }
@@ -117,7 +122,7 @@ const NavList = styled.ul`
   }
 `;
 
-const ListItem = styled.li`
+const ListItem = styled.div`
   @media screen and (max-width: ${maxWidth}) {
     border: 1px solid hsl(270, 9%, 17%);
     padding: 11px 0;
